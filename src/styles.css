@@ -70,6 +70,12 @@ h3 {
   padding: 20px 100px;
 }
 
+a.name-link {
+  text-decoration: none;
+  color: rgb(113, 53, 148);
+  font-size: 16px;
+ }
+
 .my-name {
   color: rgb(113, 53, 148);
   text-align: center;
