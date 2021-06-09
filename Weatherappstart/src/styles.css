@@ -1,0 +1,96 @@
+body {
+  font-family: "Offside", cursive;
+  color: rgb(113, 53, 148);
+}
+
+h1 {
+  font-size: 35px;
+}
+
+h2 {
+  font-size: 25px;
+}
+
+h3 {
+  font-size: 15px;
+}
+
+.quote {
+  font-size: 500%;
+}
+
+.daily-icon {
+  font-size: 3rem;
+}
+.card-whole-app {
+  background: black;
+  max-width: 850px;
+  max-height: 550px;
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 10px 15px 0 black;
+}
+.card-body {
+  padding: 0;
+}
+
+.form-control {
+  background-color: black;
+  color: white;
+  border-color: rgb(113, 53, 148);
+}
+
+.btn-primary {
+  background-color: rgb(113, 53, 148);
+  border-color: rgb(113, 53, 148);
+}
+
+.btn-primary:hover {
+  background-color: black;
+  border-color: rgb(113, 53, 148);
+}
+
+.large-temp {
+  font-size: 400%;
+}
+
+.weather-by-the-day {
+  font-size: 130%;
+  position: fixed;
+  top: 435px;
+}
+
+.today-header {
+  font-size: 35px;
+}
+.today-column {
+  padding: 20px 100px;
+}
+
+.my-name {
+  color: rgb(113, 53, 148);
+  text-align: center;
+  padding: 20px;
+}
+.quote {
+  font-family: "Condiment", cursive;
+  font-size: 20px;
+}
+a {
+  text-decoration: none;
+  color: rgb(113, 53, 148);
+  font-size: 25px;
+}
+
+a:hover {
+  color: rgb(113, 53, 148);
+}
+
+.weather-bar {
+  margin: 0;
+  display: inline;
+  font-size: 25px;
+}

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/styles.css" />
+    <script
+      src="https://kit.fontawesome.com/b5252524d8.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Condiment&family=Offside&display=swap"
+      rel="stylesheet"
+		/>
+		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div class="card-whole-app" style="width: 65rem;">
+      <div class="card-body">
+        <h5 class="card-title"></h5>
+        <p class="card-text"></p>
+      </div>
+      <!--search your city name-->
+      <form id="search-form">
+        <div class="input-group" style="width: 51rem;">
+          <input
+            id="city-input"
+            type="text"
+            class="form-control"
+            placeholder="Enter your city name"
+            aria-label="users city with two button addons"
+          />
+          <button class="btn btn-primary" type="submit">Search</button>
+          <button class="btn btn-primary" id="current-button" type="button">Current</button>
+        </div>
+      </form>
+      <!--Center Info-->
+      <div class="container-main">
+        <div class="row">
+          <div class="col-5 city-info">
+            <br />
+
+            <a href="http://" id="click-c">C</a>
+            |
+            <a href="http://" id="click-f">F</a></p>
+            <h1 id="current-city">
+              Saskatoon
+            </h1>
+
+            <h2 id="day-time">
+              May 22nd | 11:00AM
+            </h2>
+
+            <h3 id="humidity">
+              26% humidity
+            </h3>
+
+            <p class="large-temp">25°C </p>
+              
+          
+          </div>
+          <div class="col-3 align-self-center">
+            <p class="quote">
+              "Satan called. He said he wants his weather back."
+            </p>
+          </div>
+          
+              <div class="col-4 today-column">
+                <p class="today-header">
+                  Today
+                </p>
+                <p>
+                  Morning
+                  <br />
+                  <br />
+                  HOT <i class="fas fa-temperature-high"></i>
+                </p>
+
+                <p>
+                  Noon
+                  <br />
+                  <br />
+                  SUNNY <i class="fas fa-thermometer-half"></i>
+                </p>
+
+                <p>
+                  Evening
+                  <br />
+                  <br />
+                  MISTING <i class="fas fa-cloud-rain"></i>
+                </p>
+
+                <p>
+                  Night
+                  <br />
+                  <br />
+                  CHILLY <i class="fas fa-temperature-low"></i>
+                </p>
+              </div>
+
+              <!--days of the week-->
+
+              
+              <div class="col-1 align-self-center">
+                <p class="weather-by-the-day">
+                  <i class="fas fa-sun daily-icon"></i>
+                  <br />
+                  MON
+                  <br />
+                  22°C
+                </p>
+              </div>
+
+              <div class="col-1 align-self-center">
+                <p class="weather-by-the-day">
+                  <i class="fas fa-sun daily-icon"></i>
+                  <br />
+                  TUE
+                  <br />
+                  26°C
+                </p>
+              </div>
+
+              <div class="col-1 align-self-center">
+                <p class="weather-by-the-day">
+                  <i class="fas fa-sun daily-icon"></i>
+                  <br />
+                  WED
+                  <br />
+                  18°C
+                </p>
+              </div>
+
+              <div class="col-1 align-self-center">
+                <p class="weather-by-the-day">
+                  <i class="fas fa-cloud-sun daily-icon"></i>
+                  <br />
+                  THU
+                  <br />
+                  14°C
+                </p>
+              </div>
+
+              <div class="col-1 align-self-center">
+                <p class="weather-by-the-day">
+                  <i class="fas fa-cloud-showers-heavy daily-icon"></i>
+                  <br />
+                  FRI
+                  <br />
+                  10°C
+                </p>
+              </div>
+
+              <div class="col-1 align-self-center">
+                <p class="weather-by-the-day">
+                  <i class="fas fa-cloud-sun daily-icon"></i>
+                  <br />
+                  SAT
+                  <br />
+                  29°C
+                </p>
+              </div>
+
+              <div class="col-1 align-self-center">
+                <p class="weather-by-the-day">
+                  <i class="fas fa-cloud-sun daily-icon"></i>
+                  <br />
+                  SUN
+                  <br />
+                  32°C
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="my-name">
+      Coded by Lisa Allen
+    </p>
+    <script src="src/app.js"></script>
+  </body>
+</html>
