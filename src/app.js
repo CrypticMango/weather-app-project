@@ -26,16 +26,21 @@ axios.get(apiUrl).then(displayCityTemperatureInfo);
 
 function displayCityTemperatureInfo(response) {
   console.log(response);
+
   let cityName = document.querySelector("#current-city");
   cityName.innerHTML = response.data.name;
 
-  let cityTemp = Math.round(response.data.main.temp);
-  let newCityTemp = document.querySelector(".large-temp");
-  newCityTemp.innerHTML = `${cityTemp}°C`;
+  let cityTemp = document.querySelector(".large-temp");
+  cityTemp.innerHTML = `${Math.round(response.data.main.temp)}°C`;
 
-  let cityHumidity = response.data.main.humidity;
-  let newCityHumidity = document.querySelector("#humidity");
-  newCityHumidity.innerHTML = `${cityHumidity}% Humidity`;
+  let cityWind = document.querySelector("#wind");
+  cityWind.innerHTML = `Wind ${Math.round(response.data.wind.speed)}KM/H`;
+
+  let cityHumidity = document.querySelector("h3, #humidity");
+  cityHumidity.innerHTML = `Humidity ${response.data.main.humidity}%`;
+
+  let cityDescription = document.querySelector("#description");
+  cityDescription.innerHTML = response.data.weather[0].description;
 }
 
 function search(event) {

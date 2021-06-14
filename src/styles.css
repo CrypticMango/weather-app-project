@@ -81,6 +81,7 @@ a.name-link {
   text-align: center;
   padding: 20px;
 }
+
 .quote {
   font-family: "Condiment", cursive;
   font-size: 20px;
@@ -99,4 +100,13 @@ a:hover {
   margin: 0;
   display: inline;
   font-size: 25px;
+}
+
+#description {
+  position:fixed;
+  top: 340px;
+}
+
+#current-city {
+  margin: 0;
 }
