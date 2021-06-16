@@ -73,3 +73,29 @@ function searchLocation(position) {
 
 let currentLocationButton = document.querySelector("#current-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
+
+// this will convert Celcius to Farenheit - cant get it to work yet -
+
+function displayFarenheit(event) {
+  event.preventDefault();
+  let farenheitTemperature = (celciusTemperature * 9)/5 + 32;
+  let temperatureElement = document.querySelector(".large-temp");
+  temperatureElement.innerHTML = Math.round(farenheitTemperature);
+}
+
+function displayCelcius(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector(".large-temp");
+  temperatureElement.innerHTML = celciusTemperature;
+}
+
+let celciusTemperature = response.data.main.temp;
+
+let bigFarenheit = document.querySelector("#click-f");
+bigFarenheit.addEventListener("click", displayFarenheit);
+
+let bigCelcius = document.querySelector("#click-c");
+bigCelcius.addEventListener("click", displayCelcius);
+
+// update weather icon
+
