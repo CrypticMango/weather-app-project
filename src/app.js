@@ -30,7 +30,7 @@ function displayCityTemperatureInfo(response) {
   let cityName = document.querySelector("#current-city");
   cityName.innerHTML = response.data.name;
 
-  let cityTemp = document.querySelector(".large-temp");
+  let cityTemp = document.querySelector("#current-temperature");
   cityTemp.innerHTML = `${Math.round(response.data.main.temp)}°C`;
 
   let cityWind = document.querySelector("#wind");
@@ -43,7 +43,7 @@ function displayCityTemperatureInfo(response) {
   cityDescription.innerHTML = response.data.weather[0].description;
 
   //weather icon change
-  let weatherIcon = document.querySelector(".large-temp, #icon");
+  let weatherIcon = document.querySelector("#icon");
   weatherIcon.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
   console.log(response.data.weather[0].icon);
 }
