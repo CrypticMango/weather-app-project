@@ -49,7 +49,7 @@ function displayCityTemperatureInfo(response) {
 }
 
 function search(event) {
-  event.preventDefault(event);
+  event.preventDefault();
   let cityInput = document.querySelector("#city-input");
   let h1 = document.querySelector("h1");
   let city = cityInput.value.trim();
@@ -59,6 +59,8 @@ function search(event) {
   apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayCityTemperatureInfo);
 }
+
+//search("Dubai");
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", search);
