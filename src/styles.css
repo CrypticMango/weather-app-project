@@ -42,19 +42,14 @@ h3 {
 .btn-primary {
   background-color: rgb(113, 53, 148);
   border-color: rgb(113, 53, 148);
+  position: relative;
+  left: 60px;
+  top: 20px;
 }
 
 .btn-primary:hover {
   background-color: black;
   border-color: rgb(113, 53, 148);
-}
-
-
-.today-header {
-  font-size: 35px;
-}
-.today-column {
-  padding: 20px 100px;
 }
 
 a.name-link {
@@ -92,17 +87,71 @@ a:hover {
 .city-info {
   position: relative;
   top: 60px;
+  left: 20px;
 }
 
 .large-temp {
   font-size: 450%;
   position: relative;
-  left: -40px;
-  top: -70px;
+  left: -5px;
+  top: -20px;
 }
 
 .weather-by-the-day {
   font-size: 130%;
-  position: fixed;
-  top: 435px;
+  position: relative;
+  top: -50px;
+  left: 70px;
+}
+
+.today-header {
+  font-size: 35px;
+}
+
+.today-column {
+  padding: 20px 100px;
+  position: relative;
+  right: -30px;
+  top: 60px;
+}
+
+#forecast-day-one {
+  position:relative;
+  left: 20px;
+}
+
+#forecast-day-two {
+  position:relative;
+  left: 40px;
+}
+
+#forecast-day-three {
+  position:relative;
+  left: 60px;
+}
+
+#forecast-day-four {
+  position:relative;
+  left: 80px;
+}
+
+#forecast-day-five {
+  position:relative;
+  left: 100px;
+}
+
+#forecast-day-six {
+  position:relative;
+  left: 120px;
+}
+
+#forecast-day-seven {
+  position: relative;
+  left: 140px;
+}
+
+#city-input {
+  position: relative;
+  left: 20px;
+  top: 20px;
 }
