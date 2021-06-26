@@ -15,10 +15,6 @@ h3 {
   font-size: 15px;
 }
 
-.quote {
-  font-size: 500%;
-}
-
 .daily-icon {
   font-size: 3rem;
 }
@@ -53,15 +49,6 @@ h3 {
   border-color: rgb(113, 53, 148);
 }
 
-.large-temp {
-  font-size: 400%;
-}
-
-.weather-by-the-day {
-  font-size: 130%;
-  position: fixed;
-  top: 435px;
-}
 
 .today-header {
   font-size: 35px;
@@ -82,10 +69,6 @@ a.name-link {
   padding: 20px;
 }
 
-.quote {
-  font-family: "Condiment", cursive;
-  font-size: 20px;
-}
 a {
   text-decoration: none;
   color: rgb(113, 53, 148);
@@ -102,11 +85,24 @@ a:hover {
   font-size: 25px;
 }
 
-#description {
-  position:fixed;
-  top: 340px;
-}
-
 #current-city {
   margin: 0;
+}
+
+.city-info {
+  position: relative;
+  top: 60px;
+}
+
+.large-temp {
+  font-size: 450%;
+  position: relative;
+  left: -40px;
+  top: -70px;
+}
+
+.weather-by-the-day {
+  font-size: 130%;
+  position: fixed;
+  top: 435px;
 }

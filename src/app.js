@@ -81,3 +81,4 @@ function searchLocation(position) {
 let currentLocationButton = document.querySelector("#current-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
+// Adding unit conversion
