@@ -82,12 +82,21 @@ let currentLocationButton = document.querySelector("#current-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
 // Adding unit conversion
-function convertToFarenheit(celsius) {
-  return celsius * 9/5 + 32
+function convertToFahrenheit(event) {
+  event.preventDefault();
+  alert("Link Clicked");
+  //return celsius * 9/5 + 32
 }
 
 convertToF(30);
 
-function convertToCelcius(celcius) {
-  return celcius
+function convertToCelcius(event) {
+  event.preventDefault();
+  alert("Link Clicked");
+  //return celcius
 }
+
+let fahrenheitLink = document.querySelector("#fahrenheit-button");
+fahrenheitLink.addEventListener("click", convertToFahrenheit);
+
+let celciusLink = document.querySelector("#celcius-link");
