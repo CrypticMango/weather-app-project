@@ -82,3 +82,12 @@ let currentLocationButton = document.querySelector("#current-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
 // Adding unit conversion
+function convertToFarenheit(celsius) {
+  return celsius * 9/5 + 32
+}
+
+convertToF(30);
+
+function convertToCelcius(celcius) {
+  return celcius
+}

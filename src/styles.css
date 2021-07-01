@@ -82,6 +82,7 @@ a:hover {
 
 #current-city {
   margin: 0;
+  font-weight: bold;
 }
 
 .city-info {
@@ -106,6 +107,7 @@ a:hover {
 
 .today-header {
   font-size: 35px;
+  font-weight: bold;
 }
 
 .today-column {
@@ -154,4 +156,13 @@ a:hover {
   position: relative;
   left: 20px;
   top: 20px;
+}
+
+#unit-conversion-buttons {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+#day-time {
+  font-weight: bold;
 }
