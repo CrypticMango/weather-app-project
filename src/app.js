@@ -46,6 +46,8 @@ function displayCityTemperatureInfo(response) {
   let weatherIcon = document.querySelector("#icon");
   weatherIcon.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
   console.log(response.data.weather[0].icon);
+
+  celsiusTemperature = response.data.main.temp;
 }
 
 function search(event) {
@@ -81,22 +83,24 @@ function searchLocation(position) {
 let currentLocationButton = document.querySelector("#current-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
-// Adding unit conversion
+// unit conversion
 function convertToFahrenheit(event) {
   event.preventDefault();
-  alert("Link Clicked");
-  //return celsius * 9/5 + 32
+  let temperatureElement = document.querySelector("#current-temperature");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
 
-convertToF(30);
-
-function convertToCelcius(event) {
+function convertToCelsuis(event) {
   event.preventDefault();
-  alert("Link Clicked");
-  //return celcius
+  let temperatureElement = document.querySelector("#current-temperature");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 
-let fahrenheitLink = document.querySelector("#fahrenheit-button");
-fahrenheitLink.addEventListener("click", convertToFahrenheit);
+let celsiusTemperature = null;
 
-let celciusLink = document.querySelector("#celcius-link");
+let fahrenheitLinkClick = document.querySelector("#unit-conversion-buttons, #fahrenheit-button");
+fahrenheitLinkClick.addEventListener("click", convertToFahrenheit);
+
+let celsiusLinkClick = document.querySelector("#unit-conversion-buttons, #celsius-butto");
+celsiusLinkClick.addEventListener("click", convertToCelsuis);
