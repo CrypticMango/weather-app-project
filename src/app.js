@@ -99,8 +99,8 @@ function convertToCelsuis(event) {
 
 let celsiusTemperature = null;
 
-let fahrenheitLinkClick = document.querySelector("#unit-conversion-buttons, #fahrenheit-button");
+let fahrenheitLinkClick = document.querySelector("#fahrenheit-button");
 fahrenheitLinkClick.addEventListener("click", convertToFahrenheit);
 
-let celsiusLinkClick = document.querySelector("#unit-conversion-buttons, #celsius-butto");
+let celsiusLinkClick = document.querySelector("#celsius-button");
 celsiusLinkClick.addEventListener("click", convertToCelsuis);
