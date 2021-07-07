@@ -28,9 +28,10 @@ function displayForecast() {
   let forecastElement = document.querySelector("#weather-forecast");
   
   let forecastHTML = `<div class="row">`;
-  let days = ["TUE", "WED", "THU", "FRI", "SAT", "SUN", "SAT"];
+  
+  let days = ["TUE", "WED", "THU"];
   days.forEach(function (day) {
-    forecastHTML = forecastHTML +  `<div class="col-1">
+    forecastHTML = forecastHTML +  `<div class="col-2">
     <p class="weather-by-the-day" id="weather-forecast">
       <i class="fas fa-sun daily-icon"></i>
       <br />
@@ -38,10 +39,12 @@ function displayForecast() {
       <br />
       22°C/14°C
     </p>
-  </div>`;
+  </div>
+  </div>
+  `;
   });
 
-  forecastHTML = forecastHTML + `<div>`;
+ forecastHTML = forecastHTML + `</div>`;
  forecastElement.innerHTML = forecastHTML;
 }
 
