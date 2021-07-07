@@ -24,6 +24,27 @@ let apiKey = "8e38e8204be405dd999881c7e6509a30";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 axios.get(apiUrl).then(displayCityTemperatureInfo);
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#weather-forecast");
+  
+  let forecastHTML = `<div class="row">`;
+  let days = ["TUE", "WED", "THU", "FRI", "SAT", "SUN", "SAT"];
+  days.forEach(function (day) {
+    forecastHTML = forecastHTML +  `<div class="col-1">
+    <p class="weather-by-the-day" id="weather-forecast">
+      <i class="fas fa-sun daily-icon"></i>
+      <br />
+      ${day}
+      <br />
+      22°C/14°C
+    </p>
+  </div>`;
+  });
+
+  forecastHTML = forecastHTML + `<div>`;
+ forecastElement.innerHTML = forecastHTML;
+}
+
 function displayCityTemperatureInfo(response) {
   console.log(response);
 
@@ -62,8 +83,6 @@ function search(event) {
   axios.get(apiUrl).then(displayCityTemperatureInfo);
 }
 
-//search("Dubai");
-
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", search);
 
@@ -82,6 +101,8 @@ function searchLocation(position) {
 
 let currentLocationButton = document.querySelector("#current-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
+
+displayForecast();
 
 // unit conversion
 function convertToFahrenheit(event) {

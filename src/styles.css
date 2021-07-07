@@ -117,39 +117,9 @@ a:hover {
   top: 60px;
 }
 
-#forecast-day-one {
-  position:relative;
-  left: 20px;
-}
-
-#forecast-day-two {
-  position:relative;
-  left: 40px;
-}
-
-#forecast-day-three {
-  position:relative;
-  left: 60px;
-}
-
-#forecast-day-four {
-  position:relative;
-  left: 80px;
-}
-
-#forecast-day-five {
-  position:relative;
-  left: 100px;
-}
-
-#forecast-day-six {
-  position:relative;
-  left: 120px;
-}
-
-#forecast-day-seven {
-  position: relative;
-  left: 140px;
+#weather-forecast {
+  text-align: center;
+  margin-top: 20px;
 }
 
 #city-input {
