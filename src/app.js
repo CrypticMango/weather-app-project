@@ -31,15 +31,14 @@ function displayForecast() {
   
   let days = ["TUE", "WED", "THU"];
   days.forEach(function (day) {
-    forecastHTML = forecastHTML +  `<div class="col-2">
-    <p class="weather-by-the-day" id="weather-forecast">
+    forecastHTML =
+      forecastHTML +
+      `<div class="col-2">
       <i class="fas fa-sun daily-icon"></i>
       <br />
       ${day}
       <br />
       22°C/14°C
-    </p>
-  </div>
   </div>
   `;
   });
