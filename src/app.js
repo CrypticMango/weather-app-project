@@ -24,7 +24,8 @@ let apiKey = "8e38e8204be405dd999881c7e6509a30";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 axios.get(apiUrl).then(displayCityTemperatureInfo);
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#weather-forecast");
   
   let forecastHTML = `<div class="row">`;
@@ -79,10 +80,8 @@ function displayCityTemperatureInfo(response) {
 
   celsiusTemperature = response.data.main.temp;
 
-  function getForecast(response.data.coord);
+  getForecast(response.data.coord);
 }
-
-
 
 function search(event) {
   event.preventDefault();
@@ -115,7 +114,6 @@ function searchLocation(position) {
 let currentLocationButton = document.querySelector("#current-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
-displayForecast();
 
 // unit conversion
 function convertToFahrenheit(event) {
