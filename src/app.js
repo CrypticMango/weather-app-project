@@ -17,6 +17,16 @@ let day = days[today.getDay()];
 
 h2.innerHTML = `${day} | ${hours}:${minutes}`;
 
+//formats the day in the 5-7 day forecast
+function formatDay(timestamp) {
+
+let date = new Date(timestamp * 1000);
+let day = date.getDay();
+let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+return days[day];
+}
+
 //search engine
 let cityInput = document.querySelector("#city-input");
 let city = cityInput.value.trim();
@@ -24,22 +34,31 @@ let apiKey = "8e38e8204be405dd999881c7e6509a30";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 axios.get(apiUrl).then(displayCityTemperatureInfo);
 
+// displays the 5-7 day forecast
 function displayForecast(response) {
-  console.log(response.data.daily);
+
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#weather-forecast");
   
   let forecastHTML = `<div class="row">`;
   
-  let days = ["TUE", "WED", "THU"];
-  days.forEach(function (day) {
+  forecast.forEach(function (forecastDay) {
+    console.log(forecastDay);
     forecastHTML =
       forecastHTML +
       `<div class="col-2">
-      <i class="fas fa-sun daily-icon"></i>
+      <img src = "http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" 
+      alt = ""
+      width="42">
       <br />
-      ${day}
+      <span class="weather-forecast-weekday"${formatDay(forecastDay.dt)}Mon</span>
       <br />
-      22°C/14°C
+      <span class="weather-forecast-max">${forecastDay.temp.max}
+      °C
+      </span> / 
+      <span class="weather-forcast-min">
+      ${forecastDay.temp.min}°C
+      </span>
   </div>
   `;
   });
@@ -48,6 +67,7 @@ function displayForecast(response) {
  forecastElement.innerHTML = forecastHTML;
 }
 
+//forecast fetch
 function getForecast(coordinates){
   console.log(coordinates);
   let apiKey = "8e38e8204be405dd999881c7e6509a30";
