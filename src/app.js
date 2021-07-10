@@ -42,25 +42,24 @@ function displayForecast(response) {
   
   let forecastHTML = `<div class="row">`;
   
-  forecast.forEach(function (forecastDay) {
-    console.log(forecastDay);
+  forecast.forEach(function (forecastDay, index) {
+    if (index < [6]) {
     forecastHTML =
       forecastHTML +
       `<div class="col-2">
       <img src = "http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" 
       alt = ""
-      width="42">
+      width="51">
       <br />
-      <span class="weather-forecast-weekday"${formatDay(forecastDay.dt)}Mon</span>
+      <span class="weather-forecast-weekday">${formatDay(forecastDay.dt)}</span>
       <br />
-      <span class="weather-forecast-max">${forecastDay.temp.max}
-      °C
-      </span> / 
-      <span class="weather-forcast-min">
-      ${forecastDay.temp.min}°C
+      <span class="weather-forecast-max">${Math.round(forecastDay.temp.max)}°C
+      </span>/<span class="weather-forcast-min">
+      ${Math.round(forecastDay.temp.min)}°C
       </span>
   </div>
   `;
+    }
   });
 
  forecastHTML = forecastHTML + `</div>`;

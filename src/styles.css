@@ -99,9 +99,9 @@ a:hover {
 }
 
 .weather-by-the-day {
-  font-size: 130%;
+  font-size: 60%;
   position: relative;
-  top: -50px;
+  top: -90px;
   left: 70px;
 }
 
@@ -136,4 +136,17 @@ a:hover {
 
 #day-time {
   font-weight: bold;
+}
+
+.weather-forecast-weekday {
+  font-weight: bold;
+}
+
+.weather-forecast-max {
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.weather-forcast-min {
+  font-size: 15px;
 }
