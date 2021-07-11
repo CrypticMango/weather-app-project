@@ -63,7 +63,7 @@ a.name-link {
   text-align: center;
   padding: 20px;
   position: relative;
-  top: -55px
+  top: -50px
 }
 
 a {
@@ -121,7 +121,7 @@ a:hover {
 
 #weather-forecast {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 41px;
   font-size: 20px;
 }
 
@@ -156,5 +156,4 @@ a:hover {
 #icon {
   position: relative;
   right: -30px;
-  
 }
