@@ -45,11 +45,20 @@ h3 {
   position: relative;
   left: 60px;
   top: 20px;
+  color: #000000;
 }
 
 .btn-primary:hover {
   background-color: black;
   border-color: #6d44b1;
+  color: #EC6E4C;
+}
+
+.btn:focus {
+  border-color: #EC6E4C;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #EC6E4C;
+  background-color: #6d44b1;
+  color: #000000;
 }
 
 a.name-link {
@@ -127,10 +136,26 @@ a:hover {
   font-size: 20px;
 }
 
+.form-control:valid {
+  background-color:  #6d44b1;
+}
+
+.form-control::placeholder {
+  color: #EC6E4C;
+  opacity: 1; 
+}
+
+.form-control:focus {
+  border-color: #EC6E4C;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #EC6E4C;
+}
+
 #city-input {
   position: relative;
   left: 20px;
   top: 20px;
+  caret-color: #EC6E4C;
+  background-color: black;
 }
 
 #unit-conversion-buttons {
