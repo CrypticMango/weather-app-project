@@ -150,3 +150,9 @@ a:hover {
 .weather-forcast-min {
   font-size: 15px;
 }
+
+#icon {
+  position: relative;
+  right: -30px;
+  
+}

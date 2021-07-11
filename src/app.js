@@ -74,6 +74,7 @@ function getForecast(coordinates){
   axios.get(apiUrl).then(displayForecast);
 }
 
+//displays the temperature and the atmospheric details
 function displayCityTemperatureInfo(response) {
   console.log(response);
 
