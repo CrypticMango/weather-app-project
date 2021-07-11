@@ -53,7 +53,7 @@ function displayForecast(response) {
       <br />
       <span class="weather-forecast-weekday">${formatDay(forecastDay.dt)}</span>
       <br />
-      <span class="weather-forecast-max">${Math.round(forecastDay.temp.max)}°C
+      <span class="weather-forecast-max">${Math.round(forecastDay.temp.max)}°
       </span>/<span class="weather-forcast-min">
       ${Math.round(forecastDay.temp.min)}°C
       </span>
