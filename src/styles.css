@@ -62,6 +62,8 @@ a.name-link {
   color: #6d44b1;
   text-align: center;
   padding: 20px;
+  position: relative;
+  top: -55px
 }
 
 a {
