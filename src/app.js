@@ -4,6 +4,10 @@ let today = new Date();
 let hours = today.getHours();
 let minutes = today.getMinutes();
 
+if (minutes < 10) {
+  minutes = "0" + today.getMinutes();
+}
+
 let days = [
   "Sunday",
   "Monday",
@@ -27,16 +31,53 @@ let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 return days[day];
 }
 
-//search engine
+//global variables
 let cityInput = document.querySelector("#city-input");
 let city = cityInput.value.trim();
 let apiKey = "8e38e8204be405dd999881c7e6509a30";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 axios.get(apiUrl).then(displayCityTemperatureInfo);
 
+// displays today forecast
+function displayTodayForecast(response) {
+ let today = response.data.daily;
+ let todayElement = document.querySelector("#today-column");
+ let todayForecastHTML = `<div class"row">`;
+
+ today.forEach(function (todayTemp) {
+  todayForecastHTML = todayForecastHTML + ` <div class="col-4 today-column">
+ <p class="today-header">
+   Today
+ </p>
+ <p>
+   Morning
+   ${todayTemp.feels_like.morn}
+ </p>
+
+ <p>
+   Noon
+   ${todayTemp.feels_like.day}
+ </p>
+
+ <p>
+   Evening
+   ${todayTemp.feels_like.eve}
+ </p>
+
+ <p>
+   Night
+   ${todayTemp.feels_like.night}
+ </p>
+</div>`;
+todayForecastHTML = todayForecastHTML + `</div>`;
+todayElement.innerHTML = todayforecastHTML;
+ })
+}
+
+
 // displays the 5-7 day forecast
 function displayForecast(response) {
-
+  console.log(response.data.daily);
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#weather-forecast");
   
@@ -66,9 +107,15 @@ function displayForecast(response) {
  forecastElement.innerHTML = forecastHTML;
 }
 
+//fetch today mini forecast
+function getToday(coordinates) {
+  let apiKey = "8e38e8204be405dd999881c7e6509a30";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayTodayForecast);
+}
+
 //forecast fetch
 function getForecast(coordinates){
-  console.log(coordinates);
   let apiKey = "8e38e8204be405dd999881c7e6509a30";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
@@ -96,7 +143,6 @@ function displayCityTemperatureInfo(response) {
   //weather icon change
   let weatherIcon = document.querySelector("#icon");
   weatherIcon.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
-  console.log(response.data.weather[0].icon);
 
   celsiusTemperature = response.data.main.temp;
 
@@ -136,7 +182,6 @@ function searchLocation(position) {
   apiKey = "8e38e8204be405dd999881c7e6509a30";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayCityTemperatureInfo);
-  console.log(position);
 }
 
 let currentLocationButton = document.querySelector("#current-button");
@@ -163,11 +208,3 @@ fahrenheitLinkClick.addEventListener("click", convertToFahrenheit);
 
 let celsiusLinkClick = document.querySelector("#celsius-button");
 celsiusLinkClick.addEventListener("click", convertToCelsuis);
-
-//function search(city) {
-  //apiKey = "8e38e8204be405dd999881c7e6509a30";
-  //apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
- // axios.get(apiUrl).then(displayCityTemperatureInfo);
-//}
-
-//search("dubai");
