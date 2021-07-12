@@ -43,32 +43,61 @@ function displayTodayForecast(response) {
  let todayTemp = response.data.daily[0];
  let todayElement = document.querySelector(".today-column");
 
-  todayElement.innerHTML + `
+  todayElement.innerHTML = `
  <p class="today-header">
    Today
  </p>
- <p>
+ <span>
    Morning
-   ${todayTemp.feels_like.morn}
- </p>
+   </span>
 
- <p>
-   Noon
-   ${todayTemp.feels_like.day}
- </p>
+   </br>
+   
+   <span>
+   ${Math.round(todayTemp.feels_like.morn)}
+   °</span>
 
- <p>
+   </br>
+   </br>
+
+   <span>
+   Noon 
+   </span>
+
+   </br>
+
+   <span>
+   ${Math.round(todayTemp.feels_like.day)}°
+   </span>
+
+   </br>
+   </br>
+
+   <span>
    Evening
-   ${todayTemp.feels_like.eve}
- </p>
+   </span>
 
- <p>
+   </br>
+
+   <span>
+   ${Math.round(todayTemp.feels_like.eve)}°
+   </span>
+
+   </br>
+   </br>
+
+   <span>
    Night
-   ${todayTemp.feels_like.night}
- </p>
+   </span>
+
+   </br>
+   
+   <span>
+   ${Math.round(todayTemp.feels_like.night)}°
+   </span>
+ 
 </div>`;
 }
-
 
 // displays the 5-7 day forecast
 function displayForecast(response) {
