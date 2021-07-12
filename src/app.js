@@ -53,7 +53,7 @@ function displayTodayForecast(response) {
 
    </br>
    
-   <span>
+   <span class="today-temps">
    ${Math.round(todayTemp.feels_like.morn)}
    °</span>
 
@@ -66,7 +66,7 @@ function displayTodayForecast(response) {
 
    </br>
 
-   <span>
+   <span class="today-temps">
    ${Math.round(todayTemp.feels_like.day)}°
    </span>
 
@@ -79,7 +79,7 @@ function displayTodayForecast(response) {
 
    </br>
 
-   <span>
+   <span class="today-temps">
    ${Math.round(todayTemp.feels_like.eve)}°
    </span>
 
@@ -91,8 +91,8 @@ function displayTodayForecast(response) {
    </span>
 
    </br>
-   
-   <span>
+
+   <span class="today-temps">
    ${Math.round(todayTemp.feels_like.night)}°
    </span>
  
@@ -101,7 +101,6 @@ function displayTodayForecast(response) {
 
 // displays the 5-7 day forecast
 function displayForecast(response) {
-  console.log(response.data.daily);
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#weather-forecast");
   
@@ -147,8 +146,6 @@ function getForecast(coordinates){
 
 //displays the temperature and the atmospheric details
 function displayCityTemperatureInfo(response) {
-  console.log(response);
-
   let cityName = document.querySelector("#current-city");
   cityName.innerHTML = response.data.name;
 
