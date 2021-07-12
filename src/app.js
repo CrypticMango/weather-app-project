@@ -40,12 +40,10 @@ axios.get(apiUrl).then(displayCityTemperatureInfo);
 
 // displays today forecast
 function displayTodayForecast(response) {
- let today = response.data.daily;
- let todayElement = document.querySelector("#today-column");
- let todayForecastHTML = `<div class"row">`;
+ let todayTemp = response.data.daily[0];
+ let todayElement = document.querySelector(".today-column");
 
- today.forEach(function (todayTemp) {
-  todayForecastHTML = todayForecastHTML + ` <div class="col-4 today-column">
+  todayElement.innerHTML + `
  <p class="today-header">
    Today
  </p>
@@ -69,9 +67,6 @@ function displayTodayForecast(response) {
    ${todayTemp.feels_like.night}
  </p>
 </div>`;
-todayForecastHTML = todayForecastHTML + `</div>`;
-todayElement.innerHTML = todayforecastHTML;
- })
 }
 
 
@@ -147,6 +142,7 @@ function displayCityTemperatureInfo(response) {
   celsiusTemperature = response.data.main.temp;
 
   getForecast(response.data.coord);
+  getToday(response.data.coord);
 }
 
 function search(event) {
